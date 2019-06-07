@@ -29,7 +29,8 @@ class WaterButler {
 		$this->defaultOptions = [
 			'headers' => [
 				'Authorization' => "Bearer $token"
-			]
+			],
+			'timeout' => 60 * 9 // 9 min.
 		];
 		$this->client = new Client([
 			'base_url' => $this->baseUrl,
