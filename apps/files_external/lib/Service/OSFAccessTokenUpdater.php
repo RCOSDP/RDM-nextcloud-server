@@ -39,7 +39,7 @@ class OSFAccessTokenUpdater extends TimedJob {
 		\OCP\Util::writeLog('external_storage', "OSFAccessTokenUpdater: started", \OCP\Util::INFO);
 		try{
 			$dbConfig = new DBConfigService(\OC::$server->getDatabaseConnection(), \OC::$server->getCrypto());
-			$users = $userManager->search('', 5, 0);
+			$users = $userManager->search('');
 			foreach ($users as $user) {
 				\OCP\Util::writeLog('external_storage', "OSFAccessTokenUpdater: user ".$user->getUID(), \OCP\Util::INFO);
 				$dummySession = new DummyUserSession();
